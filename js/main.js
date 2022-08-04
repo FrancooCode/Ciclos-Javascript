@@ -1,17 +1,15 @@
 
 //Pedir un número por prompt, repetir la salida del mensaje “Hola” la cantidad de veces ingresada.
-
+/*
 let ingresarNumero = parseInt(prompt("ingresar numero"))
     for (let i=1; i <= ingresarNumero; i++){
         console.log( " hola \n") 
     }
+*/
 
-
-
-    
 
     //Calcular pagos en cuotas sobre un monto determinado | CLASE 4
-
+/*
 function calcularCuota (precioTotal , cantCuotas){
     
     switch (cantCuotas){
@@ -42,3 +40,35 @@ do{
     seguir = prompt("Desea ingresar otro monto ? SI NO").toUpperCase();
 
 }while (seguir !== "NO");
+*/
+
+
+
+
+
+//Desafío: Incorporar Arrays | CLASE 6 
+
+class Personas {
+    constructor(nombre, apellido, edad){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+}
+
+const personas = []
+
+personas.push(new Personas ("Franco", "Nina", 19));
+personas.push (new Personas ("Juan", "Medina", 17));
+personas.push (new Personas ("Blas", "Amarrila",18));
+
+for (let persona of personas){
+    console.log(persona)
+}
+console.log(personas);
+
+
+
+
+
+
