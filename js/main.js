@@ -70,11 +70,9 @@ console.log(personas);
 
 
 
+// CLASE 7 | FUNCIONES DE ORDEN SUPERIOR 
 
-
-//CLASE 7 | FUNCIONES DE ORDEN SUPERIOR
-
-
+/*
 const Productos = [ 
     {nombre: "harina", precio:70},
     {nombre: "huevo", precio:50},
@@ -146,9 +144,43 @@ while (seleccion != "no"){
 
 const total = carrito.reduce ((acc, el) => acc + el.precio * el.unidades, 0);
 console.log (`El total a pagar es de: ${total} $ `)
+ 
+*/
 
 
 
+
+//CLASE 8 | DOM
+
+
+const titulo = document.querySelector(".titulo");
+
+const p = document.createElement("p");
+p.textContent = "NUESTROS PRODUCTOS";
+
+titulo.appendChild(p);
+
+
+
+
+const Productos = [ 
+    {nombre: "harina", precio:70},
+    {nombre: "huevo", precio:50},
+    {nombre: "galletitas", precio:100},
+    {nombre: "pan", precio:150},
+    {nombre: "cerveza", precio:300},
+]
+
+
+const div = document.getElementById("div")
+const ul = document.createElement("ul")
+
+Productos.forEach((producto)=>{
+    const li = document.createElement("li")
+    li.textContent = `${producto.nombre}, precio: ${producto.precio}$`;
+    ul.appendChild(li)
+})
+div.appendChild(ul)
 
 
 
