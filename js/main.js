@@ -151,7 +151,7 @@ console.log (`El total a pagar es de: ${total} $ `)
 
 
 //CLASE 8 | DOM
-
+/*
 
 const titulo = document.querySelector(".titulo");
 
@@ -181,6 +181,71 @@ Productos.forEach((producto)=>{
     ul.appendChild(li)
 })
 div.appendChild(ul)
+*/
+
+
+
+
+
+//CLASE 9 | EVENTOS 
+
+
+const productos = [{ nombre:"BigMac",precio:700,}, {nombre:"TripleMac", precio:800,}, { nombre:"CheeseBurger", precio:850,},
+    {nombre:"CheeseBacon",precio:750,}, {nombre:"DobleMac",precio:800,}, {nombre:"Mcnifica",precio:600,},
+]
+      
+
+
+const carrito = []
+
+class ProductoCarrito {
+
+    constructor (nombre, precio){
+        this.nombre = nombre;
+        this.precio = precio;
+
+    }
+}
+
+let divContenedor = document.getElementById("row")
+
+function rellenarPagina (arrayProductos){
+
+    for(let producto of arrayProductos){
+        let div =  document.createElement ("div");
+        div.classList = "col-4 mt-3";
+
+        div.innerHTML = `
+        <div class = "card" style= "width: 18rem;">
+            <div class = "card-body">
+                <h5 class= "card-title">${producto.nombre}</h5>
+                <p class= "card-text"> $ ${producto.precio}</p>
+                <button class= "btn-primary anadirCarrito"> Añadir al carrito </button> 
+            </div>
+        </div>`
+        
+        divContenedor.appendChild(div)
+    }
+}
+
+rellenarPagina (productos);
+
+let botones = document.querySelectorAll(".anadirCarrito");
+botones.forEach(elemento => {
+    elemento.addEventListener ("click", anadirCarrito)
+} )
+
+function anadirCarrito (e){
+
+    let nombre = e.target.parentNode.children[0].textContent
+    let precio = e.target.parentNode.children[1].textContent
+
+    const producto = new ProductoCarrito(nombre, precio)
+    
+    carrito.push(producto);
+    console.log(carrito)
+}
+
 
 
 
