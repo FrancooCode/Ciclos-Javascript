@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    height: 90px;
+    background-color: rgb(164, 211, 118);
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
+.logo{
+    display: flex;
+}
+.logo img {
+    height: 50px;
+    
+}
+
+.divHeader a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}

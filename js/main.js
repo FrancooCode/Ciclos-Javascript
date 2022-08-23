@@ -189,6 +189,7 @@ div.appendChild(ul)
 
 //CLASE 9 | EVENTOS 
 
+// CLASE 10 | JSON y Storage
 
 const productos = [{ nombre:"BigMac",precio:700,}, {nombre:"TripleMac", precio:800,}, { nombre:"CheeseBurger", precio:850,},
     {nombre:"CheeseBacon",precio:750,}, {nombre:"DobleMac",precio:800,}, {nombre:"Mcnifica",precio:600,},
@@ -196,7 +197,7 @@ const productos = [{ nombre:"BigMac",precio:700,}, {nombre:"TripleMac", precio:8
       
 
 
-const carrito = []
+let carrito = []
 
 class ProductoCarrito {
 
@@ -237,14 +238,24 @@ botones.forEach(elemento => {
 
 function anadirCarrito (e){
 
+    let carritoLocalStorage = JSON.parse (localStorage.getItem("carrito"))
+
+     if(carritoLocalStorage){
+        carrito = carritoLocalStorage;
+     }
+
     let nombre = e.target.parentNode.children[0].textContent
-    let precio = e.target.parentNode.children[1].textContent
+    let precio = e.target.parentNode.children[1].innerText
 
     const producto = new ProductoCarrito(nombre, precio)
     
     carrito.push(producto);
-    console.log(carrito)
-}
+
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+
+     
+} 
+
 
 
 
