@@ -191,6 +191,8 @@ div.appendChild(ul)
 
 // CLASE 10 | JSON y Storage
 
+// CLASE 12 | OPERADORES AVANZADOS 
+
 const productos = [{ nombre:"BigMac",precio:700,}, {nombre:"TripleMac", precio:800,}, { nombre:"CheeseBurger", precio:850,},
     {nombre:"CheeseBacon",precio:750,}, {nombre:"DobleMac",precio:800,}, {nombre:"Mcnifica",precio:600,},
 ]
@@ -238,11 +240,8 @@ botones.forEach(elemento => {
 
 function anadirCarrito (e){
 
-    let carritoLocalStorage = JSON.parse (localStorage.getItem("carrito"))
+    const carrito = JSON.parse (localStorage.getItem("carrito")) || []
 
-     if(carritoLocalStorage){
-        carrito = carritoLocalStorage;
-     }
 
     let nombre = e.target.parentNode.children[0].textContent
     let precio = e.target.parentNode.children[1].innerText
@@ -255,6 +254,7 @@ function anadirCarrito (e){
 
      
 } 
+
 
 
 
