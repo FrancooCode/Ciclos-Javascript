@@ -193,8 +193,8 @@ div.appendChild(ul)
 
 // CLASE 12 | OPERADORES AVANZADOS 
 
-const productos = [{ nombre:"BigMac",precio:700,}, {nombre:"TripleMac", precio:800,}, { nombre:"CheeseBurger", precio:850,},
-    {nombre:"CheeseBacon",precio:750,}, {nombre:"DobleMac",precio:800,}, {nombre:"Mcnifica",precio:600,},
+const productos = [{ nombre:"BigMac",precio:700, imagen:"./assets/img1.png"}, {nombre:"TripleMac", precio:800, imagen:"./assets/img2.png"}, { nombre:"CheeseBurger", precio:850, imagen:"./assets/img3.png"},
+    {nombre:"CheeseBacon",precio:750, imagen:"./assets/img4.png"}, {nombre:"DobleMac",precio:800, imagen:"./assets/img5.png"}, {nombre:"Mcnifica",precio:600, imagen:"./assets/img6.png"},
 ]
       
 
@@ -220,6 +220,7 @@ function rellenarPagina (arrayProductos){
 
         div.innerHTML = `
         <div class = "card" style= "width: 18rem;">
+            <img src="${producto.imagen}" class="card-img-top">
             <div class = "card-body">
                 <h5 class= "card-title">${producto.nombre}</h5>
                 <p class= "card-text"> $ ${producto.precio}</p>
@@ -240,6 +241,16 @@ botones.forEach(elemento => {
 
 function anadirCarrito (e){
 
+    Toastify({
+
+        text: "Producto agregado",
+        style: {
+            background: "rgb(16, 99, 35)",
+          },
+        duration: 1000
+        
+        }).showToast();
+
     const carrito = JSON.parse (localStorage.getItem("carrito")) || []
 
 
@@ -251,9 +262,10 @@ function anadirCarrito (e){
     carrito.push(producto);
 
     localStorage.setItem("carrito", JSON.stringify(carrito))
-
-     
+    
+ 
 } 
+
 
 
 
